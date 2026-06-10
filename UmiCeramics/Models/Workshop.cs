@@ -1,0 +1,25 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+
+namespace UmiCeramics.Models
+{
+    public class Workshop
+    {
+         public int Id { get; set; }
+        public required string Title { get; set; }
+
+        public required string Description { get; set; }
+
+        public DateTime Date { get; set; }
+
+        public TimeSpan Duration { get; set; }
+
+        public decimal Price { get; set; }
+
+        public int Capacity { get; set; }
+        public ICollection<Booking> Bookings { get; set; }
+        = new List<Booking>();
+    }
+}
