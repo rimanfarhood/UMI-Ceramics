@@ -14,7 +14,7 @@ namespace UmiCeramics.Models
 
         public DateTime Date { get; set; }
 
-        public TimeSpan Duration { get; set; }
+        public int Duration { get; set; }
 
         public decimal Price { get; set; }
 
