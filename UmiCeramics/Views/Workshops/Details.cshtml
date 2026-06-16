@@ -2,6 +2,8 @@
 
 @{
     ViewData["Title"] = "Details";
+    var bookedSeats = Model.Bookings.Sum(b => b.NumberOfSeats);
+    var availableSeats = Model.Capacity - bookedSeats;
 }
 
 <h1>Details</h1>
@@ -10,45 +12,65 @@
     <h4>Workshop</h4>
     <hr />
     <dl class="row">
-        <dt class = "col-sm-2">
+        <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.Title)
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.Title)
         </dd>
-        <dt class = "col-sm-2">
+        <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.Description)
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.Description)
         </dd>
-        <dt class = "col-sm-2">
+        <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.Date)
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.Date)
         </dd>
-        <dt class = "col-sm-2">
+        <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.Duration)
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.Duration)
         </dd>
-        <dt class = "col-sm-2">
+        <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.Price)
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.Price)
         </dd>
-        <dt class = "col-sm-2">
+        <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.Capacity)
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.Capacity)
+        </dd>
+        <dt class="col-sm-2">
+            Booked Seats
+        </dt>
+        <dd class="col-sm-10">
+            @bookedSeats / @Model.Capacity
+        </dd>
+
+        <dt class="col-sm-2">
+            Available Seats
+        </dt>
+        <dd class="col-sm-10">
+            @availableSeats
         </dd>
     </dl>
 </div>
 <div>
-    <a asp-action="Edit" asp-route-id="@Model?.Id">Edit</a> |
+   @if (availableSeats > 0)
+   {
+     <a asp-controller="Bookings" asp-action="Create" asp-route-workshopId="@Model?.Id">Book Workshop</a> 
+   } 
+   else
+   {
+    <p>Workshoppen är Fullbokad</p>
+   }
     <a asp-action="Index">Back to List</a>
 </div>

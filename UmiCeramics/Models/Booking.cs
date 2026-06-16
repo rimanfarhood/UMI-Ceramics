@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -9,9 +10,12 @@ namespace UmiCeramics.Models
     {
         public int Id { get; set; }
 
-        public required string CustomerName { get; set; }
-
-        public required string CustomerEmail { get; set; }
+        [Required]
+        [MinLength(2)]
+        public string CustomerName { get; set; } = string.Empty;
+        [Required]
+        [EmailAddress]
+        public string CustomerEmail { get; set; } = string.Empty;
 
         public int NumberOfSeats { get; set; }
 

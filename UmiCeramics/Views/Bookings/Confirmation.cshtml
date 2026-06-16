@@ -1,0 +1,16 @@
+@model UmiCeramics.Models.Booking
+
+<h1>Bokningsbekreftälse</h1>
+
+<p>Tack för din bokning!</p>
+
+<h3>Bokningsdetaljer</h3>
+
+<p>Namn: @Model.CustomerName</p>
+<p>Email: @Model.CustomerEmail</p>
+<p>Platser: @Model.NumberOfSeats</p>
+
+<h3>@Model.Workshop?.Title</h3>
+<p>Datum: @Model.Workshop?.Date</p>
+<p>Längd: @Model.Workshop?.Duration</p>
+<p>Pris: @Model.Workshop?.Price</p>

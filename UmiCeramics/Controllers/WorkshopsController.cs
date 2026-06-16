@@ -34,6 +34,7 @@ namespace UmiCeramics.Controllers
             }
 
             var workshop = await _context.Workshops
+                .Include(w => w.Bookings)
                 .FirstOrDefaultAsync(m => m.Id == id);
             if (workshop == null)
             {
