@@ -28,7 +28,7 @@ public class BrevoEmailSender : IEmailSender
 
         var sender = new SendSmtpEmailSender(
             "Umi Ceramics",
-            "riman.farhood@gmail.com"
+            "noreply@umiceramics.se"
         );
 
         var receivers = new List<SendSmtpEmailTo>

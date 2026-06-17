@@ -7,16 +7,20 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using UmiCeramics.Data;
 using UmiCeramics.Models;
+using Microsoft.AspNetCore.Identity.UI.Services;
 
 namespace UmiCeramics.Controllers
 {
     public class BookingsController : Controller
     {
         private readonly ApplicationDbContext _context;
-
-        public BookingsController(ApplicationDbContext context)
+        private readonly IEmailSender _emailSender;
+        public BookingsController(
+            ApplicationDbContext context,
+            IEmailSender emailSender)
         {
             _context = context;
+            _emailSender = emailSender;
         }
 
         // GET: Bookings
@@ -80,8 +84,30 @@ namespace UmiCeramics.Controllers
                     ModelState.AddModelError("", "Det är fullbokat");
                     return View(booking);
                 }
+                booking.CancellationToken = Guid.NewGuid();
                 _context.Add(booking);
                 await _context.SaveChangesAsync();
+
+                var cancelUrl = $"{Request.Scheme}://{Request.Host}/bookings/cancel?token={booking.CancellationToken}";
+                Console.WriteLine(cancelUrl);
+                await _emailSender.SendEmailAsync(
+                    booking.CustomerEmail,
+                    "Boknings Bekreftälse",
+                       $"""
+                    <h1>Tack för din bokning!</h1>
+
+                    <p>Name: {booking.CustomerName}</p>
+
+                    <p>Seats booked: {booking.NumberOfSeats}</p>
+
+                    <p>
+                        <a href="{cancelUrl}">
+                            Cancel Booking
+                        </a>
+                    </p>
+                    """
+                );
+
                 return RedirectToAction(nameof(Confirmation), new { id = booking.Id });
             }
             ViewData["WorkshopId"] = new SelectList(_context.Workshops, "Id", "Id", booking.WorkshopId);
@@ -189,6 +215,39 @@ namespace UmiCeramics.Controllers
                 return NotFound();
             }
             return View(booking);
+        }
+
+        public async Task<IActionResult> Cancel(Guid token)
+        {
+            var booking = await _context.Bookings
+                    .Include(b => b.Workshop)
+                    .FirstOrDefaultAsync(b => b.CancellationToken == token);
+
+            if (booking == null)
+            {
+                return NotFound();
+            }
+            return View(booking);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> ConfirmCancel(Guid token)
+        {
+            var booking = await _context.Bookings
+                .FirstOrDefaultAsync(b => b.CancellationToken == token);
+
+            if (booking == null)
+            {
+                return NotFound();
+            }
+            _context.Bookings.Remove(booking);
+
+            await _context.SaveChangesAsync();
+
+            return View("Cancelled");
+
+
         }
     }
 }

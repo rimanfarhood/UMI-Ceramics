@@ -1,0 +1,13 @@
+@model UmiCeramics.Models.Booking
+
+<h1>Cancel Booking</h1>
+
+<p>Workshop: @Model.Workshop?.Title</p>
+<p>Name: @Model.CustomerName</p>
+<p>Email: @Model.CustomerEmail</p>
+<p>Seats: @Model.NumberOfSeats</p>
+
+<form asp-action="ConfirmCancel" method="post">
+    <input type="hidden" name="token" value="@Model.CancellationToken" />
+    <button type="submit">Cancel Booking</button>
+</form>

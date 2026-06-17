@@ -20,6 +20,7 @@ namespace UmiCeramics.Models
         public int NumberOfSeats { get; set; }
 
         public int WorkshopId { get; set; }
+        public Guid  CancellationToken { get; set;}
 
         public Workshop? Workshop { get; set; }
     }
