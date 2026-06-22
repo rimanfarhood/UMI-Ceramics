@@ -1,8 +1,188 @@
 ﻿@{
-    ViewData["Title"] = "Home Page";
+ViewData["Title"] = "Home";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<section class="hero">
+    <div class="hero-content">
+        <p class="hero-tagline">UMI CERAMICS</p>
+
+
+    <h1 class="hero-title">
+        Kom och måla keramik hos oss!
+    </h1>
+
+    <p class="hero-text">
+        Upptäck lugnet, kreativiteten och glädjen i att skapa något med dina egna händer.
+    </p>
+
+    <a class="umi-button"
+       asp-controller="Workshops"
+       asp-action="Index">
+        Boka en sittning
+    </a>
 </div>
+
+
+</section>
+
+<section class="how-it-works">
+    <div class="section-header">
+        <h2>Så fungerar det</h2>
+    </div>
+
+
+<div class="steps-grid">
+
+    <div class="step-card">
+        <span class="step-number">01</span>
+        <h3>Boka</h3>
+        <p>Välj en tid som passar dig.</p>
+    </div>
+
+    <div class="step-card">
+        <span class="step-number">02</span>
+        <h3>Välj keramik</h3>
+        <p>Välj bland vårt breda sortiment av keramikalster.</p>
+    </div>
+
+    <div class="step-card">
+        <span class="step-number">03</span>
+        <h3>Måla</h3>
+        <p>Slå dig ner, koppla av och skapa något unikt.</p>
+    </div>
+
+    <div class="step-card">
+        <span class="step-number">04</span>
+        <h3>Hämta</h3>
+        <p>Efter cirka två veckor är din keramik klar att hämtas.</p>
+    </div>
+
+</div>
+
+
+</section>
+
+<section class="about-preview">
+    <div class="content-wrapper">
+
+
+    <span class="section-label">OM OSS</span>
+
+    <h2>En plats för kreativitet, lugn och gemenskap</h2>
+
+    <p>
+        Vi vill skapa möjligheter för fler att upptäcka lugnet,
+        lyckan och gemenskapen som kommer med att få vara kreativ.
+    </p>
+
+    <p>
+        Ingen förkunskap krävs. Du väljer själv vilket föremål du vill måla
+        och betalar endast för produkten du väljer.
+    </p>
+
+    <a asp-controller="Home"
+       asp-action="About"
+       class="umi-button">
+        Läs mer om oss
+    </a>
+
+</div>
+
+
+</section>
+
+<section class="workshop-preview">
+
+
+<div class="content-wrapper">
+
+    <span class="section-label">BOKA</span>
+
+    <h2>Kommande sittningar</h2>
+
+    <p>
+        Hitta en tid som passar dig och boka din plats online.
+    </p>
+
+    <a class="umi-button"
+       asp-controller="Workshops"
+       asp-action="Index">
+        Se alla tider
+    </a>
+
+</div>
+
+
+</section>
+
+<section class="giftcard-preview">
+
+
+<div class="content-wrapper">
+
+    <span class="section-label">PRESENTKORT</span>
+
+    <h2>Ge bort en kreativ upplevelse</h2>
+
+    <p>
+        Våra presentkort finns både digitalt och i fysisk form.
+    </p>
+
+    <a class="umi-button"
+       asp-controller="Home"
+       asp-action="GiftCards">
+        Läs mer
+    </a>
+
+</div>
+
+
+</section>
+
+<section class="faq-preview">
+
+
+<div class="content-wrapper">
+
+    <span class="section-label">FAQ</span>
+
+    <h2>Vanliga frågor</h2>
+
+    <p>
+        Hur fungerar det? När kan jag hämta min keramik?
+        Behöver jag erfarenhet?
+    </p>
+
+    <a class="umi-button"
+       asp-controller="Home"
+       asp-action="Faq">
+        Se vanliga frågor
+    </a>
+
+</div>
+
+
+</section>
+
+<section class="contact-preview">
+
+
+<div class="content-wrapper">
+
+    <span class="section-label">KONTAKT</span>
+
+    <h2>Har du frågor?</h2>
+
+    <p>
+        Kontakta oss så hjälper vi dig gärna.
+    </p>
+
+    <a class="umi-button"
+       asp-controller="Home"
+       asp-action="Contact">
+        Kontakta oss
+    </a>
+
+</div>
+
+</section>
