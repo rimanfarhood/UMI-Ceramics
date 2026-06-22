@@ -6,7 +6,9 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using UmiCeramics.Data;
+using UmiCeramics.Data.Seed;
 using UmiCeramics.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace UmiCeramics.Controllers
 {
@@ -45,6 +47,7 @@ namespace UmiCeramics.Controllers
         }
 
         // GET: Workshops/Create
+        [Authorize(Roles = "Admin")]
         public IActionResult Create()
         {
             return View();
@@ -55,6 +58,7 @@ namespace UmiCeramics.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> Create([Bind("Id,Title,Description,Date,Duration,Price,Capacity")] Workshop workshop)
         {
             if (ModelState.IsValid)
@@ -67,6 +71,7 @@ namespace UmiCeramics.Controllers
         }
 
         // GET: Workshops/Edit/5
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -87,6 +92,7 @@ namespace UmiCeramics.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> Edit(int id, [Bind("Id,Title,Description,Date,Duration,Price,Capacity")] Workshop workshop)
         {
             if (id != workshop.Id)
@@ -118,6 +124,7 @@ namespace UmiCeramics.Controllers
         }
 
         // GET: Workshops/Delete/5
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -138,6 +145,7 @@ namespace UmiCeramics.Controllers
         // POST: Workshops/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
             var workshop = await _context.Workshops.FindAsync(id);

@@ -8,6 +8,7 @@ using Microsoft.EntityFrameworkCore;
 using UmiCeramics.Data;
 using UmiCeramics.Models;
 using Microsoft.AspNetCore.Identity.UI.Services;
+using Microsoft.AspNetCore.Authorization;
 
 namespace UmiCeramics.Controllers
 {
@@ -24,6 +25,7 @@ namespace UmiCeramics.Controllers
         }
 
         // GET: Bookings
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> Index()
         {
             var applicationDbContext = _context.Bookings.Include(b => b.Workshop);
@@ -31,6 +33,7 @@ namespace UmiCeramics.Controllers
         }
 
         // GET: Bookings/Details/5
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
@@ -115,6 +118,7 @@ namespace UmiCeramics.Controllers
         }
 
         // GET: Bookings/Edit/5
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -136,6 +140,7 @@ namespace UmiCeramics.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> Edit(int id, [Bind("Id,CustomerName,CustomerEmail,NumberOfSeats,WorkshopId")] Booking booking)
         {
             if (id != booking.Id)
@@ -167,6 +172,7 @@ namespace UmiCeramics.Controllers
         }
 
         // GET: Bookings/Delete/5
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -188,6 +194,7 @@ namespace UmiCeramics.Controllers
         // POST: Bookings/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
             var booking = await _context.Bookings.FindAsync(id);

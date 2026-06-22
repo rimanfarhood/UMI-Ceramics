@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using UmiCeramics.Data;
 using Microsoft.AspNetCore.Identity.UI.Services;
 using UmiCeramics.Services;
-
+using UmiCeramics.Data.Seed;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -13,6 +13,7 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
 builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 
 builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
+    .AddRoles<IdentityRole>()
     .AddEntityFrameworkStores<ApplicationDbContext>();
 builder.Services.AddControllersWithViews();
 builder.Services.AddTransient<IEmailSender, BrevoEmailSender>();
@@ -44,5 +45,11 @@ app.MapControllerRoute(
 
 app.MapRazorPages()
    .WithStaticAssets();
+
+using (var scope = app.Services.CreateScope())
+{
+    await IdentitySeeder.SeedAsync(
+        scope.ServiceProvider);
+}
 
 app.Run();
