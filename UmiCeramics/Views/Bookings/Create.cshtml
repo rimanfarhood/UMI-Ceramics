@@ -1,41 +1,76 @@
 @model UmiCeramics.Models.Booking
 
 @{
-    ViewData["Title"] = "Create";
+ViewData["Title"] = "Boka plats";
 }
 
-<h1>Create</h1>
+<div class="booking-header">
 
-<h4>Booking</h4>
-<hr />
-<div class="row">
-    <div class="col-md-4">
-        <form asp-action="Create">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group">
-                <label asp-for="CustomerName" class="control-label"></label>
-                <input asp-for="CustomerName" class="form-control" />
-                <span asp-validation-for="CustomerName" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="CustomerEmail" class="control-label"></label>
-                <input asp-for="CustomerEmail" class="form-control" />
-                <span asp-validation-for="CustomerEmail" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="NumberOfSeats" class="control-label"></label>
-                <input asp-for="NumberOfSeats" class="form-control" />
-                <span asp-validation-for="NumberOfSeats" class="text-danger"></span>
-            </div>
-           <input type="hidden" asp-for="WorkshopId">
-            <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
-            </div>
-        </form>
-    </div>
+    <span class="section-label">BOKNING</span>
+
+    <h1>Boka din plats</h1>
+
+    <p>
+        Fyll i dina uppgifter nedan för att reservera din plats.
+    </p>
+
 </div>
 
-<div>
-    <a asp-action="Index">Back to List</a>
-</div>
+<div class="booking-form-card">
 
+    <form asp-action="Create">
+
+        <div asp-validation-summary="ModelOnly"
+             class="text-danger">
+        </div>
+
+        <div class="form-group">
+
+            <label asp-for="CustomerName">För och Efternamn</label>
+
+            <input asp-for="CustomerName"
+                   class="form-control" />
+
+            <span asp-validation-for="CustomerName"
+                  class="text-danger">
+            </span>
+
+        </div>
+
+        <div class="form-group">
+
+            <label asp-for="CustomerEmail">Email</label>
+
+            <input asp-for="CustomerEmail"
+                   class="form-control" />
+
+            <span asp-validation-for="CustomerEmail"
+                  class="text-danger">
+            </span>
+
+        </div>
+
+        <div class="form-group">
+
+            <label asp-for="NumberOfSeats">Platser</label>
+
+            <input asp-for="NumberOfSeats"
+                   class="form-control" />
+
+            <span asp-validation-for="NumberOfSeats"
+                  class="text-danger">
+            </span>
+
+        </div>
+
+        <input type="hidden"
+               asp-for="WorkshopId" />
+
+        <button type="submit"
+                class="umi-button">
+            Bekräfta bokning
+        </button>
+
+    </form>
+
+</div>

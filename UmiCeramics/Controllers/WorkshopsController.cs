@@ -24,7 +24,11 @@ namespace UmiCeramics.Controllers
         // GET: Workshops
         public async Task<IActionResult> Index()
         {
-            return View(await _context.Workshops.ToListAsync());
+            var workshops = await _context.Workshops
+                .Include(w => w.Bookings)
+                .ToListAsync();
+
+            return View(workshops);
         }
 
         // GET: Workshops/Details/5

@@ -1,71 +1,95 @@
 @model IEnumerable<UmiCeramics.Models.Workshop>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Paint Pottery";
 }
 
-<h1>Index</h1>
+<section class="workshops-header">
 
-<p>
-    @if (User.IsInRole("Admin")) {
-        <a asp-action="Create">Create New</a>
+    <h1>Boka en sittning</h1>
+
+    <p>
+        Välj en tid som passar dig och boka din plats online.
+    </p>
+
+    @if (User.IsInRole("Admin"))
+    {
+        <a asp-action="Create" class="umi-button">
+            Skapa workshop
+        </a>
     }
-</p>
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Title)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Description)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Date)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Duration)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Price)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Capacity)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var item in Model)
-        {
-            <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Title)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Description)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Date)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Duration)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Price)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Capacity)
-                </td>
-                <td>
-                     <a asp-action="Details" asp-route-id="@item.Id">Details</a>
-                    @if (User.IsInRole("Admin"))
+
+</section>
+
+<section class="workshops-grid">
+
+    @foreach (var item in Model)
+    {
+        var bookedSeats = item.Bookings.Sum(b => b.NumberOfSeats);
+        var availableSeats = item.Capacity - bookedSeats;
+        <article class="workshop-card">
+
+            <div class="workshop-card-content">
+
+                <h2>@item.Title</h2>
+
+                <p class="workshop-date">
+                    @item.Date.ToString("dddd d MMMM yyyy")
+                </p>
+
+                <p class="workshop-description">
+                    @item.Description
+                </p>
+
+                <div class="workshop-meta">
+
+                    <span>@item.Duration min</span>
+
+                    <span>@item.Price kr</span>
+
+                    @if (availableSeats > 0)
                     {
-                        <a asp-action="Edit" asp-route-id="@item.Id">Edit</a>  
-                        <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                        <span>@availableSeats platser kvar</span>
                     }
-                </td>
-            </tr>
-        }
-    </tbody>
-</table>
+                    else
+                    {
+                        <span>Fullbokat</span>
+                    }
+                </div>
+
+            </div>
+
+            <div class="workshop-actions">
+                @if (availableSeats > 0)
+                {
+                    <a asp-action="Details" asp-route-id="@item.Id" class="umi-button">
+                        Boka
+                    </a>
+                }
+                else
+                {
+                    <span>Fullbokat</span>
+                }
+
+
+                @if (User.IsInRole("Admin"))
+                {
+                    <div class="admin-actions">
+
+                        <a asp-action="Edit" asp-route-id="@item.Id">
+                            Edit
+                        </a>
+
+                        <a asp-action="Delete" asp-route-id="@item.Id">
+                            Delete
+                        </a>
+
+                    </div>
+                }
+
+            </div>
+
+        </article>
+    }
+
+</section>
