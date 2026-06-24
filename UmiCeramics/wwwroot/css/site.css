@@ -1,5 +1,5 @@
 :root {
-    --bg-primary: #F8F2F0;
+    --bg-primary: #fdf9f8;
     --bg-secondary: #EDE4DE;
 
     --text-primary: #1F1F1F;
@@ -33,7 +33,7 @@ html {
 }
 
 .btn-primary {
-    background-color: var(--accent-pink);
+    background-color: var(--accent-green);
     border-color: var(--accent-pink);
 }
 
@@ -61,7 +61,7 @@ a {
 }
 
 .navbar {
-    background-color: var(--bg-primary);
+    background-color: var(--accent-green);
     border-bottom: none !important;
     box-shadow: none !important;
     padding: 1.5rem 0;
@@ -93,10 +93,12 @@ p {
     font-size: 1.05rem;
 }
 
+/* Home page */
+
 .umi-button {
     display: inline-block;
     padding: 1rem 2rem;
-    background-color: var(--accent-pink);
+    background-color: var(--accent-green);
     color: white;
     border-radius: 50px;
     transition: 0.3s;
@@ -113,7 +115,7 @@ align-items: center;
 }
 
 .hero-content {
-max-width: 700px;
+    margin: 3% auto;
 }
 
 .hero-tagline {
@@ -131,6 +133,8 @@ margin-bottom: 2rem;
 .hero-text {
 max-width: 600px;
 margin-bottom: 2rem;
+text-align: center;
+padding-bottom: 1rem;
 }
 
 .section-header {
@@ -166,7 +170,7 @@ color: var(--accent-pink);
 }
 
 .content-wrapper {
-max-width: 800px;
+margin: 3% auto;
 }
 
 .about-preview,
@@ -175,12 +179,14 @@ max-width: 800px;
 .faq-preview,
 .contact-preview {
 border-top: 1px solid rgba(0,0,0,.08);
+text-align: center;
+margin:3% auto;
 }
 
 .umi-button {
 display: inline-block;
 padding: 1rem 2rem;
-background-color: var(--accent-pink);
+background-color: var(--accent-green);
 color: white;
 border-radius: 999px;
 transition: .3s;
@@ -202,6 +208,8 @@ color: white;
 }
 
 }
+
+/* Workshop page */
 
 .workshops-header {
 text-align: center;
@@ -274,6 +282,8 @@ padding: 2rem;
 margin-bottom: 2rem;
 }
 
+/* Booking page */
+
 .info-row {
 display: flex;
 justify-content: space-between;
@@ -309,4 +319,45 @@ margin-bottom: 1.5rem;
 .form-control {
 border-radius: 12px;
 padding: 1rem;
+}
+
+/* About us page */
+.hero-text {
+    max-width: 700px;
+    margin: 2rem auto 0;
+    font-size: 1.2rem;
+    line-height: 1.8;
+    opacity: 0.85;
+}
+.about-hero h1 {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.about-hero .section-label {
+    margin-bottom: 1rem;
+}
+.about-hero {
+text-align: center;
+max-width: 900px;
+margin: 0 auto;
+padding: 6rem 0;
+}
+
+.about-content {
+padding: 4rem 0;
+}
+
+.about-content .content-wrapper {
+max-width: 800px;
+margin: 0 auto;
+}
+
+.about-content p {
+margin-bottom: 1.5rem;
+}
+
+.about-cta {
+text-align: center;
+padding: 6rem 0;
 }
