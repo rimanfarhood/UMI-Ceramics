@@ -1,0 +1,86 @@
+@{
+ViewData["Title"] = "FAQ";
+}
+
+<section class="faq-hero">
+
+<span class="section-label">FAQ</span>
+
+<h1>Vanliga frågor</h1>
+
+<p class="hero-text">
+    Här hittar du svar på de vanligaste frågorna om våra workshops.
+</p>
+
+</section>
+
+<section class="faq-content">
+
+<div class="faq-item">
+    <h2>Behöver jag någon tidigare erfarenhet?</h2>
+
+    <p>
+        Nej. Våra workshops passar både nybörjare och personer som har
+        målat keramik tidigare.
+    </p>
+</div>
+
+<div class="faq-item">
+    <h2>Vad ingår i priset?</h2>
+
+    <p>
+        Du betalar för den keramik du väljer att måla.
+        Färger, glasering och bränning ingår.
+    </p>
+</div>
+
+<div class="faq-item">
+    <h2>Hur lång tid tar det innan jag kan hämta min keramik?</h2>
+
+    <p>
+        Efter målningen behöver keramiken glaseras och brännas.
+        Detta tar vanligtvis cirka två veckor.
+    </p>
+</div>
+
+<div class="faq-item">
+    <h2>Kan jag boka flera platser samtidigt?</h2>
+
+    <p>
+        Ja. När du bokar kan du välja hur många platser du vill reservera.
+    </p>
+</div>
+
+<div class="faq-item">
+    <h2>Kan jag avboka min bokning?</h2>
+
+    <p>
+        Ja. I din bokningsbekräftelse finns en avbokningslänk som du kan använda.
+    </p>
+</div>
+
+<div class="faq-item">
+    <h2>Får barn delta?</h2>
+
+    <p>
+        Barn är välkomna tillsammans med vuxet sällskap.
+    </p>
+</div>
+
+</section>
+
+<section class="faq-cta">
+
+<h2>Hittar du inte svaret på din fråga?</h2>
+
+<p>
+    Kontakta oss så hjälper vi dig gärna.
+</p>
+
+<a asp-controller="Home"
+   asp-action="Contact"
+   class="umi-button">
+    Kontakta oss
+</a>
+
+</section>

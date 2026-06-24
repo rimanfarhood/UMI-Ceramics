@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Marmelad&family=Quicksand:wght@300..700&display=swap');
+
 :root {
     --bg-primary: #fdf9f8;
     --bg-secondary: #EDE4DE;
@@ -13,23 +15,29 @@
 body {
     background-color: var(--bg-primary);
     color: var(--text-primary);
+    font-family: 'Quicsand';
 }
+
 .container {
     max-width: 1200px;
 }
 
 html {
-  font-size: 14px;
+    font-size: 14px;
 }
 
 @media (min-width: 768px) {
-  html {
-    font-size: 16px;
-  }
+    html {
+        font-size: 16px;
+    }
 }
 
-.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
-  box-shadow: 0 0 0 0.1rem var(--bg-secondary), 0 0 0 0.25rem var(--accent-green);
+.btn:focus,
+.btn:active:focus,
+.btn-link.nav-link:focus,
+.form-control:focus,
+.form-check-input:focus {
+    box-shadow: 0 0 0 0.1rem var(--bg-secondary), 0 0 0 0.25rem var(--accent-green);
 }
 
 .btn-primary {
@@ -38,21 +46,23 @@ html {
 }
 
 html {
-  position: relative;
-  min-height: 100%;
+    position: relative;
+    min-height: 100%;
 }
 
 body {
-  margin-bottom: 60px;
+    margin-bottom: 60px;
 }
 
-.form-floating > .form-control-plaintext::placeholder, .form-floating > .form-control::placeholder {
-  color: var(--bs-secondary-color);
-  text-align: end;
+.form-floating>.form-control-plaintext::placeholder,
+.form-floating>.form-control::placeholder {
+    color: var(--bs-secondary-color);
+    text-align: end;
 }
 
-.form-floating > .form-control-plaintext:focus::placeholder, .form-floating > .form-control:focus::placeholder {
-  text-align: start;
+.form-floating>.form-control-plaintext:focus::placeholder,
+.form-floating>.form-control:focus::placeholder {
+    text-align: start;
 }
 
 a {
@@ -80,17 +90,20 @@ h1 {
     font-size: 4rem;
     font-weight: 300;
     line-height: 1.1;
+    font-family: "Marmelad", sans-serif;
 }
 
 h2 {
     font-size: 2.5rem;
     margin-bottom: 2rem;
     font-weight: 400;
+    font-family: "Marmelad", sans-serif;
 }
 
 p {
     line-height: 1.8;
     font-size: 1.05rem;
+    font-family: 'Quicksand', sans-serif;
 }
 
 /* Home page */
@@ -109,9 +122,9 @@ p {
 }
 
 .hero {
-min-height: 80vh;
-display: flex;
-align-items: center;
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
 }
 
 .hero-content {
@@ -119,58 +132,58 @@ align-items: center;
 }
 
 .hero-tagline {
-letter-spacing: 3px;
-text-transform: uppercase;
-margin-bottom: 1rem;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
 }
 
 .hero-title {
-font-size: 5rem;
-line-height: 1;
-margin-bottom: 2rem;
+    font-size: 5rem;
+    line-height: 1;
+    margin-bottom: 2rem;
 }
 
 .hero-text {
-max-width: 600px;
-margin-bottom: 2rem;
-text-align: center;
-padding-bottom: 1rem;
+    max-width: 600px;
+    margin-bottom: 2rem;
+    text-align: center;
+    padding-bottom: 1rem;
 }
 
 .section-header {
-text-align: center;
-margin-bottom: 4rem;
+    text-align: center;
+    margin-bottom: 4rem;
 }
 
 .section-label {
-display: block;
-margin-bottom: 1rem;
-letter-spacing: 2px;
-text-transform: uppercase;
-opacity: .7;
+    display: block;
+    margin-bottom: 1rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    opacity: .7;
 }
 
 .steps-grid {
-display: grid;
-grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-gap: 2rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
 }
 
 .step-card {
-background: white;
-padding: 2rem;
-border-radius: 24px;
+    background: white;
+    padding: 2rem;
+    border-radius: 24px;
 }
 
 .step-number {
-display: block;
-margin-bottom: 1rem;
-font-weight: bold;
-color: var(--accent-pink);
+    display: block;
+    margin-bottom: 1rem;
+    font-weight: bold;
+    color: var(--accent-pink);
 }
 
 .content-wrapper {
-margin: 3% auto;
+    margin: 3% auto;
 }
 
 .about-preview,
@@ -178,147 +191,147 @@ margin: 3% auto;
 .giftcard-preview,
 .faq-preview,
 .contact-preview {
-border-top: 1px solid rgba(0,0,0,.08);
-text-align: center;
-margin:3% auto;
+    border-top: 1px solid rgba(0, 0, 0, .08);
+    text-align: center;
+    margin: 3% auto;
 }
 
 .umi-button {
-display: inline-block;
-padding: 1rem 2rem;
-background-color: var(--accent-green);
-color: white;
-border-radius: 999px;
-transition: .3s;
+    display: inline-block;
+    padding: 1rem 2rem;
+    background-color: var(--accent-green);
+    color: white;
+    border-radius: 999px;
+    transition: .3s;
 }
 
 .umi-button {
-transform: translateY(-2px);
-color: white;
+    transform: translateY(-2px);
+    color: white;
 }
 
 @media (max-width: 768px) {
 
-.hero-title {
-    font-size: 3rem;
-}
+    .hero-title {
+        font-size: 3rem;
+    }
 
-.steps-grid {
-    grid-template-columns: 1fr;
-}
+    .steps-grid {
+        grid-template-columns: 1fr;
+    }
 
 }
 
 /* Workshop page */
 
 .workshops-header {
-text-align: center;
-padding: 4rem 0;
+    text-align: center;
+    padding: 4rem 0;
 }
 
 .workshops-grid {
-display: grid;
-grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-gap: 2rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2rem;
 }
 
 .workshop-card {
-background: white;
-border-radius: 24px;
-overflow: hidden;
-padding: 2rem;
-display: flex;
-flex-direction: column;
-justify-content: space-between;
+    background: white;
+    border-radius: 24px;
+    overflow: hidden;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .workshop-card h2 {
-margin-bottom: 1rem;
+    margin-bottom: 1rem;
 }
 
 .workshop-date {
-color: var(--accent-green);
-font-weight: 600;
+    color: var(--accent-green);
+    font-weight: 600;
 }
 
 .workshop-description {
-margin: 1.5rem 0;
+    margin: 1.5rem 0;
 }
 
 .workshop-meta {
-display: flex;
-gap: 1rem;
-flex-wrap: wrap;
-margin-bottom: 2rem;
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-bottom: 2rem;
 }
 
 .workshop-actions {
-margin-top: auto;
+    margin-top: auto;
 }
 
 .admin-actions {
-margin-top: 1rem;
-display: flex;
-gap: 1rem;
+    margin-top: 1rem;
+    display: flex;
+    gap: 1rem;
 }
 
 .workshop-details {
-max-width: 900px;
-margin: 0 auto;
+    max-width: 900px;
+    margin: 0 auto;
 }
 
 .workshop-details-header {
-margin-bottom: 4rem;
+    margin-bottom: 4rem;
 }
 
 .workshop-description {
-max-width: 700px;
+    max-width: 700px;
 }
 
 .workshop-info-card {
-background: white;
-border-radius: 24px;
-padding: 2rem;
-margin-bottom: 2rem;
+    background: white;
+    border-radius: 24px;
+    padding: 2rem;
+    margin-bottom: 2rem;
 }
 
 /* Booking page */
 
 .info-row {
-display: flex;
-justify-content: space-between;
-padding: 1rem 0;
-border-bottom: 1px solid rgba(0,0,0,.08);
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem 0;
+    border-bottom: 1px solid rgba(0, 0, 0, .08);
 }
 
 .fully-booked {
-font-weight: 600;
-color: var(--accent-green);
+    font-weight: 600;
+    color: var(--accent-green);
 }
 
 .booking-form-section {
-max-width: 700px;
-margin: 0 auto;
+    max-width: 700px;
+    margin: 0 auto;
 }
 
 .booking-header {
-text-align: center;
-margin-bottom: 3rem;
+    text-align: center;
+    margin-bottom: 3rem;
 }
 
 .booking-form-card {
-background: white;
-padding: 2rem;
-border-radius: 24px;
+    background: white;
+    padding: 2rem;
+    border-radius: 24px;
 }
 
 .form-group {
-margin-bottom: 1.5rem;
+    margin-bottom: 1.5rem;
 }
 
 .form-control {
-border-radius: 12px;
-padding: 1rem;
+    border-radius: 12px;
+    padding: 1rem;
 }
 
 /* About us page */
@@ -329,6 +342,7 @@ padding: 1rem;
     line-height: 1.8;
     opacity: 0.85;
 }
+
 .about-hero h1 {
     max-width: 900px;
     margin: 0 auto;
@@ -337,62 +351,131 @@ padding: 1rem;
 .about-hero .section-label {
     margin-bottom: 1rem;
 }
+
 .about-hero {
-text-align: center;
-max-width: 900px;
-margin: 0 auto;
-padding: 6rem 0;
+    text-align: center;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 6rem 0;
 }
 
 .about-content {
-padding: 4rem 0;
+    padding: 4rem 0;
 }
 
 .about-content .content-wrapper {
-max-width: 800px;
-margin: 0 auto;
+    max-width: 800px;
+    margin: 0 auto;
 }
 
 .about-content p {
-margin-bottom: 1.5rem;
+    margin-bottom: 1.5rem;
 }
 
 .about-cta {
-text-align: center;
-padding: 6rem 0;
+    text-align: center;
+    padding: 6rem 0;
 }
 
 /* Contact page */
 
 .contact-hero {
-text-align: center;
-max-width: 900px;
-margin: 0 auto;
+    text-align: center;
+    max-width: 900px;
+    margin: 0 auto;
 }
 
 .contact-content {
-display: flex;
-justify-content: center;
+    display: flex;
+    justify-content: center;
 }
 
 .contact-card {
-background: white;
-padding: 3rem;
-border-radius: 24px;
-width: 100%;
-max-width: 700px;
-text-align: center;
+    background: white;
+    padding: 3rem;
+    border-radius: 24px;
+    width: 100%;
+    max-width: 700px;
+    text-align: center;
 }
 
 .contact-item {
-margin-top: 2rem;
+    margin-top: 2rem;
 }
 
 .contact-item strong {
-display: block;
-margin-bottom: .5rem;
+    display: block;
+    margin-bottom: .5rem;
 }
 
 .contact-cta {
-text-align: center;
+    text-align: center;
+}
+
+/* FAQ page */
+
+.faq-hero {
+    text-align: center;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.faq-content {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.faq-item {
+    background: white;
+    padding: 2rem;
+    border-radius: 24px;
+    margin-bottom: 1.5rem;
+}
+
+.faq-item h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.faq-cta {
+    text-align: center;
+}
+
+/* Footer */
+
+.footer {
+    background-color: var(--accent-green);
+    color: white;
+    margin-top: 6rem;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 4rem 2rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 3rem;
+
+}
+
+.footer-links,
+.footer-contact {
+    display: flex;
+    flex-direction: column;
+}
+
+
+.footer-bottom {
+    border-top: 1px solid rgba(255, 255, 255, .2);
+    display: flex;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1.5rem 2rem;
+}
+
+.footer h3,
+.footer h4 {
+    margin-bottom: 1rem;
 }

@@ -35,32 +35,14 @@
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link" asp-controller="Home" asp-action="GiftCards">
-                                Gift Cards
-                            </a>
-                        </li>
-
-                        <li class="nav-item">
-                            <a class="nav-link" asp-controller="Home" asp-action="Events">
-                                Events
-                            </a>
-                        </li>
-
-                        <li class="nav-item">
-                            <a class="nav-link" asp-controller="Home" asp-action="Faq">
-                                FAQ
-                            </a>
-                        </li>
-
-                        <li class="nav-item">
                             <a class="nav-link" asp-controller="Home" asp-action="About">
-                                About
+                                Om oss
                             </a>
                         </li>
 
                         <li class="nav-item">
                             <a class="nav-link" asp-controller="Home" asp-action="Contact">
-                                Contact
+                                Kontakt
                             </a>
                         </li>
                     </ul>
@@ -75,11 +57,61 @@
         </main>
     </div>
 
-    <footer class="border-top footer text-muted">
-        <div class="container">
-            &copy; 2026 - UmiCeramics - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+    
+    <footer class="footer">
+
+        <div class="footer-content">
+
+            <div class="footer-brand">
+
+                <h3>UMI Ceramics</h3>
+
+                <p>
+                    En plats för kreativitet, lugn och gemenskap.
+                </p>
+
+            </div>
+
+            <div class="footer-links">
+
+                <h4>Utforska</h4>
+
+                <a asp-controller="Home" asp-action="About">About</a>
+
+                <a asp-controller="Home" asp-action="Faq">FAQ</a>
+
+                <a asp-controller="Home" asp-action="Events">Events</a>
+
+                <a asp-controller="Home" asp-action="GiftCards">Gift Cards</a>
+
+            </div>
+
+            <div class="footer-contact">
+
+                <h4>Kontakt</h4>
+
+                <p>info@umiceramics.se</p>
+
+                <p>Gävle, Sverige</p>
+
+            </div>
+
         </div>
+
+        <div class="footer-bottom">
+
+            <a asp-controller="Home" asp-action="Privacy">
+                Privacy Policy
+            </a>
+
+            <span>
+                © 2026 UMI Ceramics
+            </span>
+
+        </div>
+
     </footer>
+
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
