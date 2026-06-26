@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Marmelad&family=Quicksand:wght@300..700&display=swap');
 
 :root {
-    --bg-primary: #fdf9f8;
+    --bg-primary: #fff8fd;
     --bg-secondary: #EDE4DE;
 
     --text-primary: #1F1F1F;
@@ -16,10 +16,6 @@ body {
     background-color: var(--bg-primary);
     color: var(--text-primary);
     font-family: 'Quicsand';
-}
-
-.container {
-    max-width: 1200px;
 }
 
 html {
@@ -45,14 +41,7 @@ html {
     border-color: var(--accent-pink);
 }
 
-html {
-    position: relative;
-    min-height: 100%;
-}
 
-body {
-    margin-bottom: 60px;
-}
 
 .form-floating>.form-control-plaintext::placeholder,
 .form-floating>.form-control::placeholder {
@@ -119,16 +108,17 @@ p {
 
 .umi-button:hover {
     transform: translateY(-2px);
+    background-color: var(--accent-pink);
 }
 
 .hero {
-    min-height: 80vh;
-    display: flex;
-    align-items: center;
+   
+    margin: 3% auto;
 }
 
 .hero-content {
     margin: 3% auto;
+    text-align: center;
 }
 
 .hero-tagline {
@@ -205,10 +195,6 @@ p {
     transition: .3s;
 }
 
-.umi-button {
-    transform: translateY(-2px);
-    color: white;
-}
 
 @media (max-width: 768px) {
 
@@ -335,7 +321,7 @@ p {
 }
 
 /* About us page */
-.hero-text {
+.hero-text-about {
     max-width: 700px;
     margin: 2rem auto 0;
     font-size: 1.2rem;
@@ -419,6 +405,10 @@ p {
     max-width: 900px;
     margin: 0 auto;
 }
+.hero-text-faq {
+    margin: 1rem;
+    text-align: center;
+}
 
 .faq-content {
     max-width: 900px;
@@ -446,36 +436,74 @@ p {
 .footer {
     background-color: var(--accent-green);
     color: white;
-    margin-top: 6rem;
 }
 
 .footer-content {
     max-width: 1200px;
-    margin: 0 auto;
-    padding: 4rem 2rem;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 3rem;
+    margin: 3% auto;
+   
 
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr;
 }
+
+
 
 .footer-links,
 .footer-contact {
     display: flex;
     flex-direction: column;
+    
 }
 
 
+
 .footer-bottom {
-    border-top: 1px solid rgba(255, 255, 255, .2);
+    border-top: 1px solid var(--bg-primary);
+
     display: flex;
     justify-content: space-between;
+    align-items: center;
+
     max-width: 1200px;
-    margin: 0 auto;
-    padding: 1.5rem 2rem;
+    margin: 3 auto;5
+    /* padding: 1rem 2rem; */
 }
 
 .footer h3,
 .footer h4 {
     margin-bottom: 1rem;
+}
+
+.footer a:hover {
+    opacity: .8;
+}
+
+@media (max-width: 768px) {
+
+    .footer-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        gap: 1rem;
+        text-align: center;
+    }
+}
+
+footer {
+    position: static !important;
+    display: block !important;
+    width: 100% !important;
+    z-index: 0 !important;
+}
+
+main {
+    position: static !important;
+}
+
+section {
+    position: static !important;
 }
